@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoBetterment - 앱 포트폴리오</title>
+    <meta
+      name="description"
+      content="GoBetterment이 개발한 다양한 모바일 앱들을 소개합니다."
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 80px 0;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        opacity: 0.9;
+      }
+
+      .main-content {
+        background: white;
+        border-radius: 20px 20px 0 0;
+        margin-top: -20px;
+        padding: 60px 0;
+        position: relative;
+      }
+
+      .about-section {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .about-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .about-section p {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .apps-section {
+        margin-bottom: 60px;
+      }
+
+      .apps-section h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #333;
+      }
+
+      .apps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .app-card {
+        background: #f8f9fa;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .app-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .app-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: white;
+      }
+
+      .app-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .app-description {
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .app-features {
+        list-style: none;
+        margin-bottom: 25px;
+        text-align: left;
+      }
+
+      .app-features li {
+        color: #555;
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .app-features li:before {
+        content: "✓";
+        color: #667eea;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      .app-links {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .app-link {
+        display: inline-flex;
+        align-items: center;
+        background: #667eea;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .app-link:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+      }
+
+      .app-link i {
+        margin-right: 8px;
+        font-size: 1rem;
+      }
+
+      .coming-soon {
+        background: #ff6b6b;
+      }
+
+      .coming-soon:hover {
+        background: #ff5252;
+      }
+
+      .contact-section {
+        text-align: center;
+        padding: 40px 0;
+        border-top: 1px solid #e9ecef;
+        margin-top: 60px;
+      }
+
+      .contact-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .contact-section p {
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .contact-section a {
+        color: #667eea;
+        text-decoration: none;
+      }
+
+      .contact-section a:hover {
+        text-decoration: underline;
+      }
+
+      .footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 30px 0;
+        margin-top: 60px;
+      }
+
+      .footer p {
+        margin-bottom: 10px;
+      }
+
+      .footer a {
+        color: #667eea;
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .apps-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .app-links {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="container">
+        <h1>GoBetterment</h1>
+        <p>더 나은 삶을 위한 앱들을 만듭니다</p>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="container">
+        <div class="about-section">
+          <h2>개발자 소개</h2>
+          <p>
+            GoBetterment는 개인의 성장과 자기계발을 위한 혁신적인 모바일
+            애플리케이션들을 개발합니다. 사용자 중심의 디자인과 실용적인
+            기능으로 더 나은 삶을 살 수 있도록 돕는 앱들을 만들어갑니다.
+          </p>
+        </div>
+
+        <div class="apps-section">
+          <h2>개발한 앱들</h2>
+          <div class="apps-grid">
+            <div class="app-card">
+              <div class="app-icon">🎵</div>
+              <h3 class="app-title">BPM Player</h3>
+              <p class="app-description">
+                음악 파일을 BPM별로 관리하고 재생하는 앱으로, 운동이나 작업에
+                최적화된 음악을 쉽게 찾고 재생할 수 있습니다.
+              </p>
+              <ul class="app-features">
+                <li>BPM별 음악 파일 분류 및 재생</li>
+                <li>Google Drive 연동으로 클라우드 음악 관리</li>
+                <li>플레이리스트 생성 및 관리</li>
+                <li>백그라운드 음악 재생</li>
+              </ul>
+              <div class="app-links">
+                <a
+                  href="https://apps.apple.com/app/id6748600608"
+                  class="app-link"
+                >
+                  <i>🍎</i> App Store
+                </a>
+                <a href="bpmplayer/" class="app-link">
+                  <i>🌐</i> 자세히 보기
+                </a>
+              </div>
+            </div>
+
+            <div class="app-card">
+              <div class="app-icon">📈</div>
+              <h3 class="app-title">GoBetterment</h3>
+              <p class="app-description">
+                개인 성장과 자기계발을 위한 혁신적인 앱으로, 목표 설정부터
+                달성까지 체계적으로 관리합니다.
+              </p>
+              <ul class="app-features">
+                <li>개인 성장 추적 및 관리</li>
+                <li>스마트 목표 설정</li>
+                <li>진행 상황 분석</li>
+                <li>성취 시스템</li>
+              </ul>
+              <div class="app-links">
+                <a href="#" class="app-link coming-soon"> <i>🚧</i> 개발 중 </a>
+              </div>
+            </div>
+
+            <div class="app-card">
+              <div class="app-icon">💡</div>
+              <h3 class="app-title">다음 앱</h3>
+              <p class="app-description">
+                더 많은 혁신적인 앱들이 준비 중입니다. 사용자들의 삶을 더욱
+                풍요롭게 만들기 위해 계속해서 개발하고 있습니다.
+              </p>
+              <ul class="app-features">
+                <li>사용자 중심 디자인</li>
+                <li>실용적인 기능</li>
+                <li>지속적인 업데이트</li>
+                <li>완벽한 사용자 경험</li>
+              </ul>
+              <div class="app-links">
+                <a href="#" class="app-link coming-soon"> <i>🔮</i> 준비 중 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-section">
+          <h3>문의 및 지원</h3>
+          <p>
+            이메일:
+            <a href="mailto:gobetterment@gmail.com">gobetterment@gmail.com</a>
+          </p>
+          <p>개발자: gobetterment@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p>
+          <a href="privacy.html">개인정보처리방침</a> |
+          <a href="terms.html">서비스 약관</a>
+        </p>
+        <p>&copy; 2025 GoBetterment. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
