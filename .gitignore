@@ -56,4 +56,8 @@ node_modules/
 
 # Temporary folders
 tmp/
-temp/ 
+temp/
+
+# Template files (development only)
+apps/app-template.html
+styles/app-template.css 

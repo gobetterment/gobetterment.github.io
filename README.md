@@ -22,7 +22,7 @@ GoBetterment는 개인의 성장과 자기계발을 위한 혁신적인 모바�
 **다운로드:**
 
 - [App Store](https://apps.apple.com/app/id6748600608)
-- [자세히 보기](bpmplayer/)
+- [자세히 보기](apps/bpmplayer/)
 
 ### 📈 GoBetterment (개발 중)
 
