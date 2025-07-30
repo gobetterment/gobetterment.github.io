@@ -1,0 +1,16 @@
+title: GoBetterment - 앱 포트폴리오
+description: 더 나은 삶을 위한 앱들을 만듭니다
+url: https://gobetterment.github.io
+baseurl: /gbmt
+
+# Google Search Console verification
+google_verification: s8R902y9gKfH-1ukSewDe-9N-0tGxsvYMnwKUfZnMxQ
+
+# GitHub Pages settings
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
