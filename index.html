@@ -7,20 +7,31 @@
       name="google-site-verification"
       content="s8R902y9gKfH-1ukSewDe-9N-0tGxsvYMnwKUfZnMxQ"
     />
-    <title>GoBetterment - 혼자서 필요한 걸 앱으로 만드는 1인 개발자</title>
+    <title>GoBetterment - 앱 포트폴리오</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico" />
     <meta
       name="description"
-      content="혼자서 필요한 걸 앱으로 만드는 1인 개발자 GoBetterment입니다. 작은 도구들이 모여 더 나은 하루를 만듭니다."
-    />
-    <meta
-      name="google-site-verification"
-      content="s8R902y9gKfH-1ukSewDe-9N-0tGxsvYMnwKUfZnMxQ"
+      content="GoBetterment의 앱 포트폴리오입니다. BPM Player 등 혁신적인 모바일 앱들을 만나보세요."
     />
     <link rel="stylesheet" href="styles/styles.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LXHRJB8T3H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-LXHRJB8T3H");
+    </script>
   </head>
   <body>
     <div class="container">
@@ -91,6 +102,7 @@
                 href="https://apps.apple.com/app/id6748600608"
                 class="store-button"
                 target="_blank"
+                onclick="gtag('event', 'click', {event_category: 'download', event_label: 'app_store_bpmplayer_main'});"
               >
                 <img
                   src="assets/img/apple-app-store-icon.png"
@@ -111,7 +123,11 @@
                   />
                 </a>
                 -->
-              <a href="apps/bpmplayer/" class="app-btn">
+              <a
+                href="apps/bpmplayer/"
+                class="app-btn"
+                onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'bpmplayer_app_details'});"
+              >
                 <i>🌐</i> 자세히 보기
               </a>
             </div>
@@ -148,6 +164,7 @@
                       src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
                       alt="Buy Me A Coffee"
                       style="height: 60px !important; width: 217px !important"
+                      onclick="gtag('event', 'click', {event_category: 'support', event_label: 'buy_me_a_coffee_main'});"
                     />
                   </a>
                 </li>
