@@ -1,3 +1,67 @@
+# GoBetterment - App Portfolio
+
+Creating apps for a better life
+
+## Introduction
+
+GoBetterment develops innovative mobile applications for personal growth and self-development. I create apps that help people live better lives through user-centered design and practical functionality.
+
+## Developed Apps
+
+### 🎵 BPM Player
+
+An app that manages and plays music files by BPM, making it easy to find and play music optimized for exercise or work.
+
+**Key Features:**
+
+- BPM-based music file classification and playback
+- Cloud music management through Google Drive integration
+- Playlist creation and management
+- Background music playback
+
+**Download:**
+
+- [App Store](https://apps.apple.com/app/id6748600608)
+- [Learn More](apps/bpmplayer/)
+
+### 📈 GoBetterment (In Development)
+
+An innovative app for personal growth and self-development that systematically manages everything from goal setting to achievement.
+
+**Key Features:**
+
+- Personal growth tracking and management
+- Smart goal setting
+- Progress analysis
+- Achievement system
+
+### 💡 Upcoming Apps (In Preparation)
+
+More innovative apps are in preparation. I continue to develop to make users' lives more fulfilling.
+
+## Development Philosophy
+
+- **User-Centered Design**: Intuitive interfaces that prioritize user needs
+- **Practical Functionality**: Features that are actually useful in daily life
+- **Continuous Updates**: Ongoing improvements based on user feedback
+- **Perfect User Experience**: Providing smooth and enjoyable user experiences
+
+## Contact & Support
+
+- Email: gobetterment@gmail.com
+- Developer: gobetterment@gmail.com
+
+## Related Links
+
+- [Privacy Policy](privacy.html)
+- [Terms of Service](terms.html)
+
+## License
+
+© 2025 GoBetterment. All rights reserved.
+
+---
+
 # GoBetterment - 앱 포트폴리오
 
 더 나은 삶을 위한 앱들을 만듭니다

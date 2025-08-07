@@ -32,8 +32,70 @@
 
       gtag("config", "G-LXHRJB8T3H");
     </script>
+
+    <style>
+      .language-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        padding: 8px 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .language-switcher button {
+        background: none;
+        border: none;
+        padding: 4px 8px;
+        margin: 0 2px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .language-switcher button.active {
+        background: #667eea;
+        color: white;
+      }
+
+      .language-switcher button:hover {
+        background: #f0f0f0;
+      }
+
+      .language-switcher button.active:hover {
+        background: #5a6fd8;
+      }
+
+      [data-lang="ko"] {
+        display: none;
+      }
+
+      [data-lang="en"] {
+        display: block;
+      }
+
+      html[lang="ko"] [data-lang="ko"] {
+        display: block;
+      }
+
+      html[lang="ko"] [data-lang="en"] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
+    <div class="language-switcher">
+      <button onclick="switchLanguage('ko')" id="ko-btn">한국어</button>
+      <button onclick="switchLanguage('en')" id="en-btn" class="active">
+        English
+      </button>
+    </div>
+
     <div class="container">
       <div class="main-card">
         <div class="header">
@@ -45,7 +107,10 @@
             />
             <div class="brand-name">GoBetterment</div>
           </div>
-          <div class="main-slogan">
+          <div class="main-slogan" data-lang="ko">
+            혼자서 필요한 걸 앱으로 만드는 1인 개발자 입니다
+          </div>
+          <div class="main-slogan" data-lang="en">
             A solo developer who creates apps for what I need
           </div>
         </div>
@@ -54,8 +119,17 @@
           <div class="section">
             <h2 class="section-title">1. About Us</h2>
             <div class="section-content">
-              <p>I create, test, and build apps for what I need.</p>
-              <p>
+              <p data-lang="ko">
+                혼자서 만들고, 써보고, 필요한 걸 앱으로 만듭니다.
+              </p>
+              <p data-lang="en">
+                I create, test, and build apps for what I need.
+              </p>
+              <p data-lang="ko">
+                내 불편함이 다른 사람의 필요가 될 수 있다는 생각으로, 누구나
+                "꺼내 쓰기 좋은 도구"를 만들고 싶습니다.
+              </p>
+              <p data-lang="en">
                 With the belief that my inconvenience can become someone else's
                 need, I want to create tools that are "easy to pull out and use"
                 for everyone.
@@ -64,25 +138,32 @@
           </div>
 
           <div class="section">
-            <h2 class="section-title">2. Apps We Build</h2>
+            <h2 class="section-title" data-lang="ko">2. 개발한 앱들</h2>
+            <h2 class="section-title" data-lang="en">2. Apps I Build</h2>
             <div class="section-content">
-              <table class="apps-table">
+              <!-- <table class="apps-table">
                 <thead>
                   <tr>
-                    <th>App Name</th>
-                    <th>Description</th>
+                    <th data-lang="ko">앱 이름</th>
+                    <th data-lang="en">App Name</th>
+                    <th data-lang="ko">설명</th>
+                    <th data-lang="en">Description</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>BPM Player</td>
-                    <td>
+                    <td data-lang="ko">BPM Player</td>
+                    <td data-lang="en">BPM Player</td>
+                    <td data-lang="ko">
+                      BPM 정보를 활용한 DJ/믹스셋 작업에 특화된 mp3 플레이어
+                    </td>
+                    <td data-lang="en">
                       An mp3 player specialized for DJ/mixset work utilizing BPM
                       information
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table> -->
             </div>
           </div>
 
@@ -95,7 +176,11 @@
               />
               BPM Player
             </h3>
-            <p>
+            <p data-lang="ko">
+              음악을 BPM별로 분류하고 재생하는 혁신적인 음악 플레이어입니다.
+              운동, 작업, 집중에 최적화된 음악을 쉽게 찾고 재생하세요.
+            </p>
+            <p data-lang="en">
               An innovative music player that organizes and plays music by BPM.
               Easily find and play music optimized for exercise, work, and
               focus.
@@ -131,34 +216,44 @@
                 class="app-btn"
                 onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'bpmplayer_app_details'});"
               >
-                <i>🌐</i> Learn More
+                <i>🌐</i> <span data-lang="ko">자세히 보기</span
+                ><span data-lang="en">Learn More</span>
               </a>
             </div>
           </div>
 
           <div class="section">
-            <h2 class="section-title">
+            <h2 class="section-title" data-lang="ko">
+              3. 작은 도구들이 모여, 더 나은 하루를 만듭니다.
+            </h2>
+            <h2 class="section-title" data-lang="en">
               3. Small tools come together to create a better day.
             </h2>
             <div class="section-content">
-              <p class="tagline">
+              <p class="tagline" data-lang="ko">
+                GoBetterment - 당신의 일상은 더 나아질 수 있어요.
+              </p>
+              <p class="tagline" data-lang="en">
                 GoBetterment - Your daily life can be better.
               </p>
             </div>
           </div>
 
           <div class="section">
-            <h2 class="section-title">4. Contact / Support</h2>
+            <h2 class="section-title" data-lang="ko">4. 연락하기 / 후원하기</h2>
+            <h2 class="section-title" data-lang="en">4. Contact / Support</h2>
             <div class="section-content">
               <ul class="contact-list">
                 <li>
-                  Contact:
+                  <span data-lang="ko">문의:</span
+                  ><span data-lang="en">Contact:</span>
                   <a href="mailto:gobetterment@gmail.com"
                     >gobetterment@gmail.com</a
                   >
                 </li>
                 <li>
-                  Support:
+                  <span data-lang="ko">후원:</span
+                  ><span data-lang="en">Support:</span>
                   <a
                     href="https://www.buymeacoffee.com/gobettermeg"
                     target="_blank"
@@ -184,12 +279,71 @@
 
         <div class="footer">
           <p>
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html" data-lang="ko">개인정보처리방침</a>
+            <a href="privacy.html" data-lang="en">Privacy Policy</a> |
+            <a href="terms.html" data-lang="ko">서비스 약관</a>
+            <a href="terms.html" data-lang="en">Terms of Service</a>
           </p>
           <p>&copy; 2025 GoBetterment. All rights reserved.</p>
         </div>
       </div>
     </div>
+
+    <script>
+      // 언어 감지 및 전환 함수
+      function detectLanguage() {
+        // 브라우저 언어 설정 확인
+        const browserLang = navigator.language || navigator.userLanguage;
+        const isKorean = browserLang.startsWith("ko");
+
+        // URL 파라미터로 언어 강제 설정 확인
+        const urlParams = new URLSearchParams(window.location.search);
+        const forcedLang = urlParams.get("lang");
+
+        if (forcedLang) {
+          return forcedLang;
+        }
+
+        // 한국어 브라우저 설정이면 한국어, 아니면 영어
+        return isKorean ? "ko" : "en";
+      }
+
+      function switchLanguage(lang) {
+        // HTML lang 속성 변경
+        document.documentElement.lang = lang;
+
+        // 버튼 활성화 상태 변경
+        document
+          .getElementById("ko-btn")
+          .classList.toggle("active", lang === "ko");
+        document
+          .getElementById("en-btn")
+          .classList.toggle("active", lang === "en");
+
+        // 언어별 요소 표시/숨김
+        const koElements = document.querySelectorAll('[data-lang="ko"]');
+        const enElements = document.querySelectorAll('[data-lang="en"]');
+
+        if (lang === "ko") {
+          koElements.forEach((el) => (el.style.display = "block"));
+          enElements.forEach((el) => (el.style.display = "none"));
+        } else {
+          koElements.forEach((el) => (el.style.display = "none"));
+          enElements.forEach((el) => (el.style.display = "block"));
+        }
+
+        // 로컬 스토리지에 언어 설정 저장
+        localStorage.setItem("preferredLanguage", lang);
+      }
+
+      // 페이지 로드 시 언어 설정
+      document.addEventListener("DOMContentLoaded", function () {
+        // 저장된 언어 설정 확인
+        const savedLang = localStorage.getItem("preferredLanguage");
+        const detectedLang = savedLang || detectLanguage();
+
+        switchLanguage(detectedLang);
+      });
+    </script>
   </body>
 </html>
