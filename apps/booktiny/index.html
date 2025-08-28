@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="s8R902y9gKfH-1ukSewDe-9N-0tGxsvYMnwKUfZnMxQ"
+    />
+
+    <!-- Primary Meta Tags -->
+    <title>한장한장 (Booktiny) - 가벼운 독서 습관 트래커 | 독서 기록 앱</title>
+    <meta
+      name="title"
+      content="한장한장 (Booktiny) - 가벼운 독서 습관 트래커 | 독서 기록 앱"
+    />
+    <meta
+      name="description"
+      content="한장한장(Booktiny)은 현재 페이지 기록과 즉시 보상으로 꾸준히 완독을 돕는 독서 습관 트래커입니다. 진행률, 연속일(Streak), 가벼운 통계, 알림을 지원합니다."
+    />
+    <meta
+      name="keywords"
+      content="독서 습관, 독서 기록, reading tracker, book progress, streak, 히트맵, 독서 알림, 현재 페이지 기록"
+    />
+    <meta name="author" content="gobetterment" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Korean" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://gobetterment.github.io/apps/booktiny/"
+    />
+    <meta
+      property="og:title"
+      content="한장한장 (Booktiny) - 가벼운 독서 습관 트래커"
+    />
+    <meta
+      property="og:description"
+      content="현재 페이지 기록과 즉시 보상으로 독서 습관을 만드세요."
+    />
+    <meta
+      property="og:image"
+      content="https://gobetterment.github.io/assets/img/booktiny/app_icon.png"
+    />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:site_name" content="Booktiny" />
+    <meta property="og:locale" content="ko_KR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://gobetterment.github.io/apps/booktiny/"
+    />
+    <meta
+      property="twitter:title"
+      content="한장한장 (Booktiny) - 가벼운 독서 습관 트래커"
+    />
+    <meta
+      property="twitter:description"
+      content="현재 페이지 기록과 즉시 보상으로 독서 습관을 만드세요."
+    />
+    <meta
+      property="twitter:image"
+      content="https://gobetterment.github.io/assets/img/booktiny/app_icon.png"
+    />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://gobetterment.github.io/apps/booktiny/"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.ico" />
+
+    <!-- Stylesheet (기존 스타일 유지) -->
+    <link rel="stylesheet" href="../../styles/bpmplayer.css" />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Booktiny",
+        "alternateName": "한장한장",
+        "description": "페이지 기반의 초간단 입력과 즉시 보상으로 꾸준히 완독을 돕는 독서 습관 트래커",
+        "url": "https://gobetterment.github.io/apps/booktiny/",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/PreOrder"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "gobetterment",
+          "email": "gobetterment@gmail.com"
+        },
+        "screenshot": [
+          "https://gobetterment.github.io/assets/img/bpmplayer/screenshots/ko/image1.jpg",
+          "https://gobetterment.github.io/assets/img/bpmplayer/screenshots/ko/image2.jpg",
+          "https://gobetterment.github.io/assets/img/bpmplayer/screenshots/ko/image3.jpg"
+        ],
+        "featureList": [
+          "초간단 기록",
+          "빠른 책 등록",
+          "원형 진행률 게이지",
+          "꾸준함이 보이는 습관",
+          "히트맵 캘린더",
+          "공유 기능"
+        ]
+      }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LXHRJB8T3H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-LXHRJB8T3H");
+    </script>
+
+    <style>
+      .language-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        padding: 8px 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .language-switcher button {
+        background: none;
+        border: none;
+        padding: 4px 8px;
+        margin: 0 2px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .language-switcher button.active {
+        background: #000;
+        color: #fff;
+      }
+      .language-switcher button:hover {
+        background: #f0f0f0;
+      }
+      .language-switcher button.active:hover {
+        background: #222;
+      }
+      [data-lang="ko"] {
+        display: none;
+      }
+      [data-lang="en"] {
+        display: block;
+      }
+      html[lang="ko"] [data-lang="ko"] {
+        display: block;
+      }
+      html[lang="ko"] [data-lang="en"] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="language-switcher">
+      <button onclick="switchLanguage('ko')" id="ko-btn">한국어</button>
+      <button onclick="switchLanguage('en')" id="en-btn" class="active">
+        English
+      </button>
+    </div>
+
+    <div class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>한장한장 <span data-lang="en">(Booktiny)</span></h1>
+            <p data-lang="ko">
+              한 장 한 장, 완독까지 이어지는 가장 쉬운 습관. 페이지만 적으세요.
+              성취는 우리가 보여줄게요.
+            </p>
+            <p data-lang="en">
+              A lightweight reading habit tracker that helps you finish books by
+              recording your current page and providing instant motivation
+            </p>
+            <div class="cta-buttons">
+              <!-- 출시 전 더미 버튼: 비활성 링크 -->
+              <a href="#" class="cta-button secondary" onclick="return false;"
+                >📱 <span data-lang="ko">기능 살펴보기</span
+                ><span data-lang="en">Explore Features</span></a
+              >
+            </div>
+          </div>
+          <div>
+            <img
+              src="../../assets/img/booktiny/app_icon.png"
+              alt="Booktiny 앱 아이콘 (더미)"
+              class="app-icon-large"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="container">
+        <div id="features" class="features-section">
+          <h2 class="section-title" data-lang="ko">주요 기능</h2>
+          <h2 class="section-title" data-lang="en">Key Features</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">✍️</div>
+              <h3 data-lang="ko">초간단 기록</h3>
+              <h3 data-lang="en">Simple Logging</h3>
+              <p data-lang="ko">
+                오늘 읽은 페이지만 입력하면 자동으로 진행률이 계산돼요.
+              </p>
+              <p data-lang="en">
+                Enter pages read today and your progress is calculated
+                automatically.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔎</div>
+              <h3 data-lang="ko">빠른 책 등록</h3>
+              <h3 data-lang="en">Fast Book Adding</h3>
+              <p data-lang="ko">
+                검색 또는 바코드 스캔으로 표지와 정보까지 한 번에!
+              </p>
+              <p data-lang="en">
+                Search or scan to auto-fill book cover and details at once.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⭕</div>
+              <h3 data-lang="ko">원형 진행률 게이지</h3>
+              <h3 data-lang="en">Circular Progress Gauge</h3>
+              <p data-lang="ko">
+                내 독서 진도가 한눈에! 작지만 확실한 성취를 매일 느껴보세요.
+              </p>
+              <p data-lang="en">
+                See progress at a glance with a circular gauge.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🏆</div>
+              <h3 data-lang="ko">꾸준함이 보이는 습관</h3>
+              <h3 data-lang="en">Consistency That Shows</h3>
+              <p data-lang="ko">
+                연속일, 배지, 마일스톤으로 독서 습관을 자연스럽게 만들어줘요.
+              </p>
+              <p data-lang="en">
+                Build habits with streaks, badges, and milestones.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🗓️</div>
+              <h3 data-lang="ko">히트맵 캘린더</h3>
+              <h3 data-lang="en">Heatmap Calendar</h3>
+              <p data-lang="ko">
+                월간/연간 독서 리듬과 강도를 색으로 시각화해 확인할 수 있어요.
+              </p>
+              <p data-lang="en">
+                Visualize monthly/yearly reading rhythm and intensity as colors.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📤</div>
+              <h3 data-lang="ko">공유 기능</h3>
+              <h3 data-lang="en">Sharing</h3>
+              <p data-lang="ko">
+                읽고 있는 책과 메모를 친구들과 나누고 함께 즐기세요.
+              </p>
+              <p data-lang="en">
+                Share your reading progress and notes with friends.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="screenshots-section">
+          <h2 class="section-title" data-lang="ko">앱 스크린샷 (더미)</h2>
+          <h2 class="section-title" data-lang="en">App Screenshots (Dummy)</h2>
+          <div class="screenshots-grid">
+            <div class="screenshot">
+              <img
+                src="../../assets/img/bpmplayer/screenshots/en/image1.jpg"
+                data-lang="en"
+                alt="Booktiny 더미 스크린샷 1"
+              />
+              <img
+                src="../../assets/img/bpmplayer/screenshots/ko/image1.jpg"
+                data-lang="ko"
+                alt="Booktiny 더미 스크린샷 1"
+              />
+            </div>
+            <div class="screenshot">
+              <img
+                src="../../assets/img/bpmplayer/screenshots/en/image2.jpg"
+                data-lang="en"
+                alt="Booktiny 더미 스크린샷 2"
+              />
+              <img
+                src="../../assets/img/bpmplayer/screenshots/ko/image2.jpg"
+                data-lang="ko"
+                alt="Booktiny 더미 스크린샷 2"
+              />
+            </div>
+            <div class="screenshot">
+              <img
+                src="../../assets/img/bpmplayer/screenshots/en/image3.jpg"
+                data-lang="en"
+                alt="Booktiny 더미 스크린샷 3"
+              />
+              <img
+                src="../../assets/img/bpmplayer/screenshots/ko/image3.jpg"
+                data-lang="ko"
+                alt="Booktiny 더미 스크린샷 3"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="download-section">
+          <h2 data-lang="ko">출시 예정</h2>
+          <h2 data-lang="en">Coming Soon</h2>
+          <p data-lang="ko">
+            런칭 준비 중입니다. 곧 App Store · Google Play에서 만나요!
+          </p>
+          <p data-lang="en">
+            Launching soon. Available on App Store and Google Play.
+          </p>
+          <div class="download-buttons">
+            <a href="#" class="store-button" onclick="return false;">
+              <img
+                src="../../assets/img/apple-app-store-icon.png"
+                alt="App Store (준비 중)"
+                class="store-icon"
+              />
+            </a>
+            <a href="#" class="store-button" onclick="return false;">
+              <img
+                src="../../assets/img/google-play-store-icon.png"
+                alt="Google Play (준비 중)"
+                class="store-icon"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-section">
+          <h3 data-lang="ko">문의 및 지원</h3>
+          <h3 data-lang="en">Contact & Support</h3>
+          <p>
+            <span data-lang="ko">이메일:</span
+            ><span data-lang="en">Email:</span>
+            <a href="mailto:gobetterment@gmail.com">gobetterment@gmail.com</a>
+          </p>
+          <p>
+            <span data-lang="ko">개발자:</span
+            ><span data-lang="en">Developer:</span> gobetterment@gmail.com
+          </p>
+
+          <div class="support-section">
+            <h4 data-lang="ko">개발자 지원하기</h4>
+            <h4 data-lang="en">Support the Developer</h4>
+            <p data-lang="ko">
+              더 나은 앱을 만들기 위해 여러분의 지원이 필요합니다!
+            </p>
+            <p data-lang="en">Your support is needed to create better apps!</p>
+            <a href="https://www.buymeacoffee.com/gobettermeg" target="_blank">
+              <img
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                alt="Buy Me A Coffee"
+                style="height: 60px !important; width: 217px !important"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="back-link">
+          <a href="../../index.html" data-lang="ko"
+            >← 앱 포트폴리오로 돌아가기</a
+          >
+          <a href="../../index.html" data-lang="en">← Back to App Portfolio</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p>
+          <a href="privacy.html" data-lang="ko">개인정보처리방침</a>
+          <a href="privacy.html" data-lang="en">Privacy Policy</a> |
+          <a href="../../terms.html" data-lang="ko">서비스 약관</a>
+          <a href="../../terms.html" data-lang="en">Terms of Service</a>
+        </p>
+        <p>&copy; 2025 Booktiny. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script>
+      function detectLanguage() {
+        const browserLang = navigator.language || navigator.userLanguage;
+        const isKorean = browserLang && browserLang.startsWith("ko");
+        const urlParams = new URLSearchParams(window.location.search);
+        const forcedLang = urlParams.get("lang");
+        if (forcedLang) {
+          return forcedLang;
+        }
+        return isKorean ? "ko" : "en";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // lazy loading
+        document.querySelectorAll("img").forEach((img) => {
+          if (!img.loading) {
+            img.loading = "lazy";
+          }
+        });
+        // noopener on external links
+        document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+          if (!link.rel || !link.rel.includes("noopener")) {
+            link.rel = (link.rel ? link.rel + " " : "") + "noopener";
+          }
+        });
+      });
+
+      function switchLanguage(lang) {
+        document.documentElement.lang = lang;
+        document
+          .getElementById("ko-btn")
+          .classList.toggle("active", lang === "ko");
+        document
+          .getElementById("en-btn")
+          .classList.toggle("active", lang === "en");
+
+        const koElements = document.querySelectorAll('[data-lang="ko"]');
+        const enElements = document.querySelectorAll('[data-lang="en"]');
+        if (lang === "ko") {
+          koElements.forEach((el) => (el.style.display = "block"));
+          enElements.forEach((el) => (el.style.display = "none"));
+        } else {
+          koElements.forEach((el) => (el.style.display = "none"));
+          enElements.forEach((el) => (el.style.display = "block"));
+        }
+
+        // 스크린샷 이미지 언어별 표시/숨김
+        const screenshotImages = document.querySelectorAll(
+          ".screenshot img[data-lang]"
+        );
+        screenshotImages.forEach((img) => {
+          img.style.display =
+            img.getAttribute("data-lang") === lang ? "block" : "none";
+        });
+
+        localStorage.setItem("preferredLanguage", lang);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedLang = localStorage.getItem("preferredLanguage");
+        const detectedLang = savedLang || detectLanguage();
+        switchLanguage(detectedLang);
+      });
+    </script>
+  </body>
+</html>
