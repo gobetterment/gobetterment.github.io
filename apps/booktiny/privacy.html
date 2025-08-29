@@ -296,16 +296,53 @@
           sheet. No copy is retained by us.
         </p>
 
-        <h2 data-lang="ko" class="section-title">7. 분석(옵트인)</h2>
-        <h2 data-lang="en" class="section-title">7. Analytics (Optional)</h2>
+        <h2 data-lang="ko" class="section-title">
+          7. 분석(옵트인, 사용자가 동의한 경우에만)
+        </h2>
+        <h2 data-lang="en" class="section-title">
+          7. Analytics (Optional, Opt‑in)
+        </h2>
         <p data-lang="ko">
-          추후 분석 기능 도입 시, 명시적 동의를 받은 사용자에 한하여 수집하며,
-          동의하지 않으면 전송되지 않습니다.
+          앱 설정에서 사용자가 명시적으로 동의한 경우에만 Firebase Analytics를
+          사용합니다. 동의하지 않으면 어떤 분석 데이터도 전송되지 않습니다.
         </p>
         <p data-lang="en">
-          If analytics are introduced in the future, they will be strictly
-          opt‑in with clear consent. Without consent, no analytics data will be
-          sent.
+          We use Firebase Analytics only if you explicitly opt in within the app
+          settings. Without consent, no analytics data is sent.
+        </p>
+        <p data-lang="ko">수집 이벤트(동의 시):</p>
+        <ul data-lang="ko">
+          <li><code>book_added</code> (book_id)</li>
+          <li><code>reading_logged</code> (book_id, date, pages)</li>
+          <li><code>menu_opened</code> (route, label)</li>
+          <li><code>share_used</code> (template, format, book_id)</li>
+        </ul>
+        <p data-lang="en">Events we collect (when enabled):</p>
+        <ul data-lang="en">
+          <li><code>book_added</code> (book_id)</li>
+          <li><code>reading_logged</code> (book_id, date, pages)</li>
+          <li><code>menu_opened</code> (route, label)</li>
+          <li><code>share_used</code> (template, format, book_id)</li>
+        </ul>
+        <p data-lang="ko">
+          개인을 식별할 수 있는 정보는 수집하지 않도록 구성하며, 서비스 제공을
+          위해 필요한 범위에서 Google(Firebase)에 표준 기기/사용 메타데이터가
+          전송될 수 있습니다. 자세한 내용은 Google의 개인정보 문서를 참고하세요.
+        </p>
+        <p data-lang="en">
+          We configure analytics to avoid collecting personally identifiable
+          information. Google (Firebase) may receive standard device/usage
+          metadata needed to provide the service. See Google’s privacy
+          documentation for details.
+        </p>
+        <p data-lang="ko">
+          설정에서 언제든 분석을 켜거나 끌 수 있습니다. 비활성화하면 이후 수집은
+          중단되며, 이미 전송된 데이터의 보관은 Firebase 정책을 따릅니다.
+        </p>
+        <p data-lang="en">
+          You can enable/disable analytics at any time in Settings. Disabling
+          stops further collection; previously sent data is retained per
+          Firebase policies.
         </p>
 
         <h2 data-lang="ko" class="section-title">8. 보관 및 삭제</h2>
