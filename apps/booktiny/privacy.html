@@ -158,8 +158,8 @@
             font-weight: bold;
           "
         >
-          <span data-lang="ko">시행일: 2025-08-27</span>
-          <span data-lang="en">Effective date: 2025-08-27</span>
+          <span data-lang="ko">시행일: 2026-10-17</span>
+          <span data-lang="en">Effective date: 2026-10-17</span>
         </p>
 
         <h2 data-lang="ko" class="section-title">1. 개요</h2>
@@ -188,8 +188,8 @@
             위한 로컬 저장.
           </li>
           <li>
-            계정 가입이 필요하지 않으며, 기본적으로 개인을 식별할 수 있는 정보를
-            수집하지 않습니다.
+            계정 가입은 필요하지 않습니다. 다만 아래 광고·분석·오류 보고 SDK는
+            기기 식별자와 앱 사용·진단 정보를 처리할 수 있습니다.
           </li>
         </ul>
         <ul data-lang="en">
@@ -203,8 +203,8 @@
             preferences): stored locally to provide your preferred experience.
           </li>
           <li>
-            No account is required. We do not collect personally identifiable
-            information by default.
+            No account is required. However, the advertising, analytics, and crash-reporting
+            SDKs described below may process device identifiers, app usage, and diagnostic data.
           </li>
         </ul>
 
@@ -297,18 +297,18 @@
         </p>
 
         <h2 data-lang="ko" class="section-title">
-          7. 분석(옵트인, 사용자가 동의한 경우에만)
+          7. 분석 및 선택적 앱 이벤트
         </h2>
         <h2 data-lang="en" class="section-title">
-          7. Analytics (Optional, Opt‑in)
+          7. Analytics and Optional App Events
         </h2>
         <p data-lang="ko">
-          앱 설정에서 사용자가 명시적으로 동의한 경우에만 Firebase Analytics를
-          사용합니다. 동의하지 않으면 어떤 분석 데이터도 전송되지 않습니다.
+          앱 설정에서 사용자가 명시적으로 동의한 경우에만 아래의 앱 정의 분석 이벤트를
+          Firebase Analytics에 전송합니다. Firebase SDK의 자동 데이터 처리와 광고·오류 보고 SDK의 데이터 처리는 이 설정과 별개일 수 있습니다.
         </p>
         <p data-lang="en">
-          We use Firebase Analytics only if you explicitly opt in within the app
-          settings. Without consent, no analytics data is sent.
+          We send the app-defined analytics events below to Firebase Analytics only if you
+          explicitly opt in within the app settings. Automatic Firebase SDK processing and advertising/crash-reporting data processing may occur separately.
         </p>
         <p data-lang="ko">수집 이벤트(동의 시):</p>
         <ul data-lang="ko">
@@ -336,13 +336,34 @@
           documentation for details.
         </p>
         <p data-lang="ko">
-          설정에서 언제든 분석을 켜거나 끌 수 있습니다. 비활성화하면 이후 수집은
-          중단되며, 이미 전송된 데이터의 보관은 Firebase 정책을 따릅니다.
+          설정에서 언제든 선택적 앱 분석 이벤트를 켜거나 끌 수 있습니다. 비활성화하면
+          이후 해당 이벤트 전송은 중단되며, 이미 전송된 데이터의 보관은 Firebase 정책을 따릅니다.
         </p>
         <p data-lang="en">
-          You can enable/disable analytics at any time in Settings. Disabling
-          stops further collection; previously sent data is retained per
-          Firebase policies.
+          You can enable or disable optional app-defined analytics events in Settings.
+          Disabling stops subsequent transmission of those events; previously sent data is retained under Firebase policies.
+        </p>
+
+        <h2 data-lang="ko" class="section-title">7-1. 광고 및 오류 보고</h2>
+        <h2 data-lang="en" class="section-title">7-1. Advertising and Crash Reporting</h2>
+        <p data-lang="ko">
+          Android 앱에는 Google AdMob 광고 SDK와 Firebase Crashlytics가 포함되어 있습니다.
+          AdMob은 광고 제공, 성과 분석 및 사기 방지를 위해 IP 주소(대략적인 위치 추정에 사용될 수 있음),
+          광고 ID·앱 세트 ID 등 기기 식별자, 앱 상호작용, 진단·성능 정보를 자동으로 수집하고 공유할 수 있습니다.
+          Crashlytics는 앱 오류 진단을 위해 비정상 종료 로그, 당시의 앱 상태와 기기 정보,
+          설치 식별자를 수집합니다. Firebase Analytics를 사용자가 활성화하면 앱 인스턴스 ID,
+          광고 ID, 앱 사용 이벤트와 대략적인 위치 정보도 분석 목적으로 처리될 수 있습니다.
+          이 데이터는 Google의 서비스로 전송되며 TLS/HTTPS로 암호화됩니다.
+        </p>
+        <p data-lang="en">
+          The Android app includes Google AdMob and Firebase Crashlytics.
+          For advertising, analytics, and fraud prevention, AdMob may automatically collect and share
+          IP addresses (which may be used to infer approximate location), device identifiers such as
+          advertising and app set IDs, app interactions, and diagnostic/performance information.
+          Crashlytics collects crash logs, relevant app state and device metadata, and an installation
+          identifier to diagnose crashes. If you enable Firebase Analytics, app-instance and advertising
+          IDs, app usage events, and approximate location information may also be processed for analytics.
+          These data are sent to Google services using TLS/HTTPS encryption.
         </p>
 
         <h2 data-lang="ko" class="section-title">8. 보관 및 삭제</h2>
@@ -355,8 +376,7 @@
             때까지 로컬에 보관됩니다.
           </li>
           <li>
-            당사는 서버를 운영하지 않으므로, 서버 측 데이터 삭제 요청은 해당되지
-            않습니다.
+            당사는 독서 기록을 보관하는 자체 서버를 운영하지 않습니다. Google의 광고·분석·오류 보고 서비스로 전송된 데이터는 해당 서비스의 보관 및 삭제 정책에 따라 처리됩니다.
           </li>
         </ul>
         <ul data-lang="en">
@@ -365,8 +385,7 @@
             (settings/data management) or uninstall the app.
           </li>
           <li>
-            Since we do not run a backend, we cannot delete data from our
-            servers because none is stored there.
+            We do not operate a backend that stores your reading history. Data sent to Google advertising, analytics, and crash-reporting services is retained and deleted under those services’ policies.
           </li>
         </ul>
 
@@ -390,17 +409,13 @@
         <ul data-lang="ko">
           <li>당사는 사용자의 데이터를 판매하지 않습니다.</li>
           <li>
-            사용자의 데이터를 서버에 보관하지 않으므로 국외 이전이 발생하지
-            않습니다. 제3자 도서 API에는 사용자가 직접 요청한 조회 정보만
-            전달됩니다.
+            당사는 독서 기록을 자체 서버에 보관하지 않습니다. 광고·분석·오류 보고 데이터는 Google에 전송되어 국외에서 처리될 수 있으며, 제3자 도서 API에는 사용자가 요청한 조회 정보가 전달됩니다.
           </li>
         </ul>
         <ul data-lang="en">
           <li>We do not sell your data.</li>
           <li>
-            We do not transfer your personal data internationally because we do
-            not host your data. Third‑party book APIs receive only lookup
-            queries you initiate.
+            We do not host your reading history. Advertising, analytics, and crash-reporting data may be sent to Google and processed internationally. Third-party book APIs receive lookup queries you initiate.
           </li>
         </ul>
 
